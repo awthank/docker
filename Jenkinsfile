@@ -2,9 +2,9 @@ pipeline {
 2
     environment { 
 3
-        registry = "YourDockerhubAccount/YourRepository" 
+        registry = "awttw27193633/odoo" 
 4
-        registryCredential = 'dockerhub_id' 
+        registryCredential = 'dockerhub' 
 5
         dockerImage = '' 
 6
@@ -18,7 +18,7 @@ pipeline {
 10
             steps { 
 11
-                git 'https://github.com/YourGithubAccount/YourGithubRepository.git' 
+                git 'https://github.com/awthank/docker.git' 
 12
             }
 13
@@ -44,7 +44,7 @@ pipeline {
 23
                 script { 
 24
-                    docker.withRegistry( '', registryCredential ) { 
+                    docker.withRegistry( 'dockerhub', registryCredential ) { 
 25
                         dockerImage.push() 
 26
